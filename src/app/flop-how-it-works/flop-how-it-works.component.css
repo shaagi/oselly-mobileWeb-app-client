@@ -1,0 +1,11 @@
+.question {
+  text-align: left;
+  /*font-size: 110%;*/
+  margin-right: 20%;
+}
+
+.answer {
+  text-align: left;
+  font-size: 115%;
+  margin-right: 13%
+}

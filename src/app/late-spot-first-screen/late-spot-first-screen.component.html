@@ -1,0 +1,136 @@
+<!--<div *ngIf="gameClosed === false;">-->
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+      <!--<h5>-->
+      <!--{{memberRefined}} has invited you to play ball-->
+      <!--</h5>-->
+      <h5>
+        Get in this ball game
+      </h5>
+
+      <!--<p>booking expires in: <strong>{{hoursLeft}}:{{minutesLeftRefined}}:{{secondsLeftRefined}}</strong></p>-->
+      <p>You must decide in: <strong>4:32:10</strong></p>
+    </div>
+  </div>
+</div>
+
+<!--<app-gym-name-and-pic></app-gym-name-and-pic>-->
+
+<div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image': 'url(assets/FletchersGym.jpg)'}">
+  <!--<div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image': getImage()}">-->
+  <div class="container">
+    <br>
+    <h4 class="display-8">Thu, Jan 10th, 6:00PM-8:00PM</h4>
+    <p class="lead">Centennial Senior Public School</p>
+    <p class="lead">10 Ladore Drive, Brampton, ON L8C3P4</p>
+  </div>
+</div>
+
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+
+      <!--<app-who-else-int></app-who-else-int>-->
+      <div class="container text-center border border-secondary">
+        Swagat Soni is interested
+      </div>
+      <div class="container text-center border border-secondary">
+        Nikhil Gandhi is interested (invited by Swagat Soni)
+      </div>
+      <div class="container text-center border border-secondary">
+        Raj Pandya is interested (invited by Nikhil Gandhi)
+      </div>
+      <p></p>
+
+      <div class="row border-bottom text-left">
+        <div class="col-8">In this game so far:</div>
+        <div class="col-4">10 people</div>
+      </div>
+      <div class="row border-bottom text-left">
+        <div class="col-8">Maximum allowed in game:</div>
+        <div class="col-4">12 people</div>
+      </div>
+      <div class="row border-bottom text-left">
+        <div class="col-8">I'll pay:</div>
+        <div class="col-4">$8.80-$9.77</div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <br>
+
+  <!--<div *ngIf="userPaymentInfoLinked === false">-->
+</div>
+
+<div class="container text-center">
+  <div>
+    <!--<a-->
+    <!--routerLink="/memberMemberMarkMeInSignup"-->
+    <!--[queryParams]="{member: member, game: gameId}"-->
+    <!--&gt;-->
+    <a
+      routerLink="/lateSpotMarkIntSignup"
+    >
+      <!--<button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg" (click)="mixpanel('ReplaceFirstScreenImIn')">I'm in</button>-->
+      <button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg">I'm in</button>
+    </a>
+    <a routerLink="/cant">
+      <!--<button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg" (click)="mixpanel('ReplaceFirstScreenCant')">Can't</button>-->
+      <button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg">Can't</button>
+    </a>
+  </div>
+
+  <!--</div>-->
+  <!--<div *ngIf="userPaymentInfoLinked === true && closeModal === false">-->
+  <!--&lt;!&ndash; Button trigger modal &ndash;&gt;-->
+  <!--<button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">-->
+  <!--I'm in-->
+  <!--</button>-->
+  <!---->
+  <!--<a routerLink="/cant">-->
+  <!--<button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg" (click)="mixpanel('memberMemberFirstScreenCant')">Can't</button>-->
+  <!--</a>-->
+  <!--&lt;!&ndash; Modal &ndash;&gt;-->
+  <!--<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">-->
+  <!--<div class="modal-dialog modal-dialog-centered" role="document">-->
+  <!--<div class="modal-content">-->
+  <!--<div class="modal-header">-->
+  <!--<h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>-->
+  <!--<button type="button" class="close" data-dismiss="modal" aria-label="Close">-->
+  <!--<span aria-hidden="true">&times;</span>-->
+  <!--</button>-->
+  <!--</div>-->
+  <!--<div class="modal-body">-->
+  <!--Your payment info is already linked with Oselly-->
+  <!--</div>-->
+  <!--<div class="modal-footer">-->
+
+  <!--<a-->
+  <!--routerLink="/memberMemberMarkMeInSignup"-->
+  <!--[queryParams]="{member: member, game: gameId}"-->
+  <!--&gt;-->
+  <!--<button type="button" style="margin-right: 1%;" class="btn btn-primary" (click)="imSure()">Yes</button>-->
+  <!--</a>-->
+  <!--<button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <!--</div>-->
+  <br>
+
+  <button class="btn btn-warning">How It Works</button>
+  <br>
+  <br>
+  <!--<app-user-pays-calculator></app-user-pays-calculator>-->
+  <br>
+</div>
+<!--</div>-->
+
+<!--<app-game-closed *ngIf="gameClosed === true;"></app-game-closed>-->
+<hr>
+
+<hr>

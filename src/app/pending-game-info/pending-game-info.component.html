@@ -1,0 +1,88 @@
+<app-gym-name-and-pic></app-gym-name-and-pic>
+<app-who-else-int></app-who-else-int>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center gameData">
+      <br>
+      <div class="row text-left">
+        <div class="col-8">in the game so far:</div>
+        <div class="col-4">{{totalPplIn}} people</div>
+      </div>
+      <div *ngIf="enoughPplIn === false" class="row text-left">
+        <div class="col-8">how many more needed for game to happen:</div>
+        <div class="col-4">{{pplNeededToHitMin}} people</div>
+      </div>
+      <div *ngIf="enoughPplIn === false" class="row text-left">
+        <div class="col-8">game must get enough people within:</div>
+        <div class="col-4">
+          <app-booking-expiry-timer></app-booking-expiry-timer>
+        </div>
+      </div>
+      <div *ngIf="enoughPplIn === true" class="row text-left">
+        <div class="col-8">how many more allowed in game:</div>
+        <div class="col-4">{{pplNeededToHitMax}} people</div>
+      </div>
+      <div *ngIf="enoughPplIn === true" class="row text-left">
+        <div class="col-8">new people must get in within:</div>
+        <div class="col-4">
+          <app-booking-expiry-timer></app-booking-expiry-timer>
+        </div>
+      </div>
+
+      <div *ngIf="isMember === false">
+        <p></p>
+        <div *ngIf="isHost">
+          <button class="btn btn-primary" (click)="directToInviteOthers()">Invite Friends</button>
+          <p></p>
+          <!--<button class="btn btn-danger" (click)="cancelBooking()">Cancel Booking</button>-->
+
+          <!-- Button trigger modal -->
+          <button
+                  type="button"
+                  class="btn btn-danger"
+                  data-toggle="modal"
+                  data-target="#exampleModalCenter"
+                  (click)="mixpanel('cancelBookingClicked')"
+          >
+            Cancel Booking
+          </button>
+
+          <!-- Modal -->
+          <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body text-left">
+                  Everyone in this game will get an email letting them know that it's cancelled. You can't undo this.
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="cancelBooking()">Yes</button>
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <button *ngIf="isSemiHost" class="btn btn-primary" (click)="directToMemberHowToInvite()">Invite Friends</button>
+        <p></p>
+      </div>
+      <div class="row text-left">
+        <div *ngIf="enoughPplIn === false" class="col-8">if game happens, i'll pay:</div>
+        <div *ngIf="enoughPplIn === true" class="col-8">i'll pay:</div>
+        <div class="col-4">
+          <app-user-pays-range></app-user-pays-range>
+        </div>
+        <br>
+      </div>
+      <br>
+      <br>
+    </div>
+  </div>
+  <br>
+</div>

@@ -1,0 +1,83 @@
+.shareButtonsDiv {
+  padding-left: 15%;
+  padding-right: 15%;
+  font-size: 115%;
+}
+
+.copyLinkButton {
+  background: white;
+  width: 100%;
+  text-align: left;
+  margin-top: 2%;
+  margin-bottom: 2%;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: dimgrey;
+  border-color: dimgrey;
+}
+
+.whatsappButton {
+  margin-top: 1%;
+  margin-bottom: 2%;
+  background: white;
+  width: 100%;
+  text-align: left;
+  border-color: #1F9A11;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #1F9A11;
+}
+
+.messengerButton {
+  margin-top: 2%;
+  background: white;
+  width: 100%;
+  text-align: left;
+  border-color: #007CF7;
+  padding-top: 0;
+  padding-bottom: 0;
+  color: #007CF7;
+}
+
+#sendLinkVia {
+  margin-bottom: 0%;
+  color: #0069D9;
+}
+
+#yourFriendSeesBelowThisLine {
+  height: 5px;
+  border: none;
+  background-color: #333;
+}
+
+#whatYourFriendSees {
+  opacity: 0.5; /* Real browsers */
+}
+
+.confused {
+  background-color: #F4991A;
+  color: white;
+}
+
+.checkPending {
+  color: #F4991A;
+  padding-right: 18%;
+}
+
+h5 {
+  text-align: left;
+}
+
+.gameData {
+  font-size: 105%;
+}
+
+.col-7 {
+  padding-top: 1%;
+  padding-bottom: 1.5%;
+}
+
+.col-5 {
+  padding-top: 1%;
+  padding-bottom: 1.5%;
+}

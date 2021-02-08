@@ -1,0 +1,39 @@
+
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #F4991A">
+  <a class="navbar-brand" routerLink="/" (click)="mixpanelNavBarBrand()">
+    <img src="assets/logo.png" width="30" height="30" class="d-inline-block align-top" alt="">Oselly
+    <!--<img src="assets/logo.png" height="30" class="d-inline-block align-top" alt="">-->
+  </a>
+  <button class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+          (click)="mixpanelToggle()"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/slots" (click)="mixpanelStartGame()">Available Times</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/howItWorksReg" (click)="mixpanelToHowItWorks()">How It Works</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link drift-open-chat" routerLink="/contactUs" (click)="mixpanelContactUs()">Contact Us</a>
+        </li>
+        <li class="nav-item" data-toggle="collapse" data-target=".navbar-collapse.show">
+          <a class="nav-link" routerLink="/gymLogin" (click)="mixpanelToImGym()">I'm A Gym</a>
+        </li>
+      </ul>
+
+    <div data-toggle="collapse" data-target=".navbar-collapse.show">
+      <button routerLink="/loginReg" class="btn btn-secondary" (click)="mixpanelLoginReg()">Login</button>
+    </div>
+  </div>
+</nav>

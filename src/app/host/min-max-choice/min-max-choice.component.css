@@ -1,0 +1,31 @@
+.scrolling-wrapper {
+  overflow-x: scroll;
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+.card {
+  display: inline-block;
+}
+
+img {
+  height: 7em;
+}
+
+h5 {
+  text-align: left;
+}
+
+.form-control {
+  /*width: 80%;*/
+}
+
+.input-group {
+  margin-top: 3%;
+  align-self: flex-start;
+}
+
+.btn-primary {
+  border-color: darkgray;
+  background-color: darkgray;
+}
+

@@ -1,0 +1,75 @@
+<div *ngIf="!gameClosed">
+  <div class="container">
+    <div class="shareButtonsDiv">
+      <br>
+      <p id="sendLinkVia">People who open the invite link will see what's below the line. Send your invite link via:</p>
+      <button class="btn btn-secondary whatsappButton" (click)="shareWhatsapp()">Whatsapp</button>
+      <button class="btn btn-secondary copyLinkButton" (click)="getShareLink()">Copy/pasting link</button>
+      <!--<button class="btn btn-secondary messengerButton" (click)="shareMessenger()">Messenger</button>-->
+    </div>
+
+    <br>
+    <p *ngIf="displayPendingGamesMessage === true" class="checkPending">To check the status of the game you can view your <u (click)="toPendingGames()">pending games</u></p>
+  </div>
+  <hr id="yourFriendSeesBelowThisLine">
+  <!--<br>-->
+  <div id="whatYourFriendSees">
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 text-left">
+          <p></p>
+          <h5>
+            {{memberRefined}} has invited you to play basketball
+          </h5>
+          <!--<button class="btn confused" (click)="directToHowItWorks()">Confused? Press this</button>-->
+          <p></p>
+          <!--<p>you must decide in: <strong>{{hoursLeft}}:{{minutesLeftRefined}}:{{secondsLeftRefined}}</strong></p>-->
+        </div>
+      </div>
+    </div>
+    <app-gym-name-and-pic></app-gym-name-and-pic>
+    <div class="container text-center">
+      <div class="row justify-content-center">
+        <div class="col-12 text-center gameData">
+          <div class="row text-left font-weight-bold">
+            <div class="col-7">Decide within:</div>
+            <div class="col-5">
+              <app-booking-expiry-timer></app-booking-expiry-timer>
+            </div>
+          </div>
+          <div class="row text-left">
+            <div class="col-7">Minimum needed:</div>
+            <div class="col-5">{{minPplAllowed}} people</div>
+          </div>
+          <div class="row text-left">
+            <div class="col-7">Maximum allowed:</div>
+            <div class="col-5">{{maxPplAllowed}} people</div>
+          </div>
+          <div class="row text-left">
+            <div class="col-7">I'll pay:</div>
+            <div class="col-5">
+              <app-user-pays-range></app-user-pays-range>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <br>
+
+      <div>
+        <button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg" (click)="mixpanel('semiHostHowToInviteWhatYourFriendSeesImIn')">I'm in</button>
+        <!--<button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg" (click)="mixpanel('hostInviteOthersWhatYourFriendSeesImIn')">Can't</button>-->
+      </div>
+
+      <br>
+      <app-who-else-int></app-who-else-int>
+      <br>
+      <!--<button class="btn confused" (click)="directToHowItWorks()">Confused? Press this</button>-->
+    </div>
+    <!--<br>-->
+    <app-member-member-faq></app-member-member-faq>
+  </div>
+
+</div>
+<app-game-closed *ngIf="gameClosed"></app-game-closed>
+

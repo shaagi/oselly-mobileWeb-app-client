@@ -1,0 +1,29 @@
+
+.jumbotron-fluid {
+  background-size: cover;
+}
+
+.tiredOf {
+  font-size: 110%;
+  padding-right: 15%;
+  margin-top: 6%;
+  margin-bottom: 7%;
+  text-align: left;
+}
+
+.bookgym {
+  margin-top: 10%;
+  padding-right: 15%;
+  font-size: 110%;
+  text-align: left;
+}
+
+.title {
+  color: navy;
+  text-align: left;
+  margin-top: -7%;
+  margin-bottom: 15%;
+}
+
+
+

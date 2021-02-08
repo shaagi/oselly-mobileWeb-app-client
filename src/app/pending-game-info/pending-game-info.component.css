@@ -1,0 +1,14 @@
+.gameData {
+  font-size: 105%;
+}
+
+.col-8 {
+  padding-top: 1%;
+  padding-bottom: 1.5%;
+}
+
+.col-4 {
+  padding-top: 1%;
+  padding-bottom: 1.5%;
+  text-align: right;
+}

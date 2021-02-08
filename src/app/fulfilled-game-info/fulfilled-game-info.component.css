@@ -1,0 +1,33 @@
+.spotSeller {
+  margin-bottom: 1%;
+}
+
+.spotSellingDeadline {
+  margin-bottom: 1%;
+  margin-right: 20%;
+  margin-left: 20%;
+  text-align: left;
+}
+
+.sellSpotButton {
+  margin-bottom: 4%;
+}
+
+.lateSpots {
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 1%;
+}
+
+.whoElseGoing {
+  padding-right: 18%;
+}
+
+.border-bottom {
+  padding-bottom: 1.5%;
+}
+
+.modal-body {
+  padding-right: 20%;
+}
+

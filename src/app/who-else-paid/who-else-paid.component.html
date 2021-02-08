@@ -1,0 +1,9 @@
+<div class="container text-left border-bottom">
+  <strong>{{hostFireStore}}</strong> has given payment info
+</div>
+<div *ngFor="let semiHost of semiHosts; let i = index" class="container text-left border-bottom">
+  <strong>{{semiHost}}</strong> has given payment info (invited by {{hostFireStore}})
+</div>
+<div *ngFor="let member of memberInvitees; let i = index" class="container text-left border-bottom">
+  <strong>{{member}}</strong> has given payment info (invited by {{semiHostInviters[i]}})
+</div>

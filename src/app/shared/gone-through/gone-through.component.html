@@ -1,0 +1,42 @@
+<div class="container text-center" *ngIf="isLoggedIn">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <br>
+      <h5>
+        Your fulfilled games:
+      </h5>
+      <br>
+
+      <div *ngFor="let game of fulfilledGames; let i = index">
+        <button type="button" class="btn btn-primary"
+                routerLink="/fulfilledGameInfo" [queryParams]="{game: game.gameId}"
+                (click)="mixpanel('selectFulfilledGame')"
+        >
+
+          <p>{{game.startTimeSeconds | secondsToDate}}, {{game.startTimeSeconds | secondsToTime}}-{{game.endTimeSeconds | secondsToTime}}</p>
+        </button>
+        <p></p>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="container text-center" *ngIf="!isLoggedIn">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <br>
+      <h5>
+        You must be logged in to view your fulfilled games.
+      </h5>
+      <br>
+      <h5>
+        After logging in hit the menu button and click 'Fulfilled Games'.
+      </h5>
+    </div>
+    <div class="col-12 text-center">
+      <br>
+      <button class="btn btn-primary" (click)="directToLogin()">Login</button>
+    </div>
+  </div>
+</div>

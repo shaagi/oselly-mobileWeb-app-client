@@ -1,0 +1,63 @@
+<div class="col-12 text-center">
+  <p></p>
+  <form id="payment-form">
+    <div class="form-row">
+      <label for="card-element">
+        Credit or debit card
+      </label>
+      <div id="card-element">
+        <!-- A Stripe Element will be inserted here. -->
+      </div>
+
+      <!-- Used to display Element errors. -->
+      <div id="card-errors" role="alert"></div>
+      <p class="errorThatWentThroughText" *ngIf="error">{{errorMessage}}</p>
+    </div>
+    <div *ngIf="loading">
+      <app-loading-spinner></app-loading-spinner>
+      <p class="checkingYourCard">checking your payment card...please wait</p>
+    </div>
+    <button class="btn btn-primary" (click)="submitPaymentForm()">Sign Up</button>
+  </form>
+  <hr>
+  <p class="wontChargeADime">
+    <strong>We will only charge you if at least {{minPplAllowed}} group members give payment info in time, otherwise, we won't charge you a dime.</strong>
+  </p>
+  <br>
+  <p class="wontChargeADime"><app-brampton-signups></app-brampton-signups> other guys in Brampton have trusted Oselly with their payment info</p>
+</div>
+
+<app-gym-name-and-pic></app-gym-name-and-pic>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center gameData">
+      <div class="row text-left font-weight-bold">
+        <div class="col-7">I'll pay:</div>
+        <div class="col-5">
+          <app-user-pays-range></app-user-pays-range>
+        </div>
+      </div>
+      <div class="row text-left">
+        <div class="col-7">Minimum needed:</div>
+        <div class="col-5">{{minPplAllowed}} people</div>
+      </div>
+      <div class="row text-left">
+        <div class="col-7">Maximum allowed:</div>
+        <div class="col-5">{{maxPplAllowed}} people</div>
+      </div>
+      <div class="row text-left">
+        <div class="col-7">Decide within:</div>
+        <div class="col-5"><app-booking-expiry-timer></app-booking-expiry-timer></div>
+      </div>
+    </div>
+
+
+    <div class="col-12 text-center">
+      <br>
+      <app-who-else-paid></app-who-else-paid>
+      <br>
+    </div>
+
+  </div>
+</div>
+<app-member-member-faq></app-member-member-faq>

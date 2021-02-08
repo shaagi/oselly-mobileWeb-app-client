@@ -1,0 +1,13 @@
+#calendar {
+  /*max-width: 900px;*/
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.custom-file {
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+}
+
+
+

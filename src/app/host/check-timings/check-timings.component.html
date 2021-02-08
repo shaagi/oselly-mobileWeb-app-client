@@ -1,0 +1,30 @@
+<div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image': 'url(assets/friendsPlayingBall.jpg)'}">
+  <div class="container">
+
+    <h4 class="title" [ngStyle]="{'padding-top': (isMobile === false) ? '7%' : ''}"><strong>Play indoor basketball with friends</strong></h4>
+    <br>
+    <br>
+    <br>
+    <br>
+
+  </div>
+</div>
+<div class="col-12 text-left">
+
+  <!--<button (click)="onGet()">test email</button>-->
+  <!--<br>-->
+  <a routerLink="/slots"><button type="button" class="btn btn-primary btn-lg" (click)="mixpanel()">Check available times</button></a>
+  <br>
+  <p class="bookgym"> <strong>Book gym time, invite friends, split payments - all with just a few clicks</strong></p>
+  <hr>
+  <p class="tiredOf">Tired of paying extra because other people flopped?</p>
+  <p class="tiredOf">Tired of chasing people for money?</p>
+  <p class="tiredOf">Tired of paying $10 when you only owe $8.94?</p>
+  <hr>
+
+</div>
+
+<br>
+
+<app-how-it-works-reg></app-how-it-works-reg>
+

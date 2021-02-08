@@ -1,0 +1,27 @@
+
+.accordion-section .panel-default > .panel-heading {
+  border: 0;
+  background: #f4f4f4;
+  padding: 0;
+  margin-right: 15%;
+}
+.accordion-section .panel-default .panel-title a {
+  display: block;
+}
+
+.accordion-section .panel-default .panel-title a:after {
+  font-style: normal;
+  font-size: 3rem;
+  /*content: "\f106";*/
+  content: "+";
+  float: right;
+  margin-top: -12%;
+}
+.accordion-section .panel-default .panel-title a.collapsed:after {
+  content: "+";
+}
+.accordion-section .panel-default .panel-body {
+  margin-right: 12%;
+}
+
+

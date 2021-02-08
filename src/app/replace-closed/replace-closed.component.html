@@ -1,0 +1,37 @@
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <br>
+      <h6 class="text">
+        Sorry, this person already sold his spot (or the time limit to replace has been reached).
+      </h6>
+      <br>
+      <h5 class="text">
+        Interested in playing basketball with your friends?
+      </h5>
+      <br>
+      <h5 class="text">
+        Fill out the form so we can notify you when a gym or game spot opens up
+      </h5>
+
+
+    </div>
+  </div>
+
+  <br>
+
+</div>
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+      <form>
+        <div class="form-group col-md-auto">
+
+          <input type="text" id="inputPassword5" class="form-control" placeholder="Phone Number" aria-describedby="nameHelpBlock">
+          <br>
+          <button routerLink="/rejectFormFilled" class="btn btn-primary" (click)="mixpanel('replaceClosedContactInfoSubmit')">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

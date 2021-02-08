@@ -1,0 +1,77 @@
+<div *ngIf="slotBooked === false">
+  <app-gym-name-and-pic></app-gym-name-and-pic>
+  <div class="container">
+    <form #numberOfPpl="ngForm">
+      <div class="row border-bottom text-left">
+        <div class="col-6">Minimum number of people I want in the game:</div>
+        <div class="form-group input-group col-6">
+          <div class="input-group-prepend" (click)="decreaseMin()">
+            <div class="input-group-text">-</div>
+          </div>
+          <input
+            type="number"
+            style="font-weight: bold;"
+            class="form-control text-center"
+            name="minPpl"
+            [ngModel]="defaultMinPpl"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          >
+          <div class="input-group-append" (click)="increaseMin()">
+            <div class="input-group-text">+</div>
+          </div>
+        </div>
+        <!--<div class="col-3">{{noOfPplInGame}}</div>-->
+      </div>
+
+      <div class="row border-bottom text-left">
+        <div class="col-6">Maximum number of people I want in the game:</div>
+        <div class="form-group input-group col-6">
+          <div class="input-group-prepend" (click)="decreaseMax()">
+            <div class="input-group-text">-</div>
+          </div>
+          <!--<div class="input-group" style="width: 60%; margin-left: 20%; margin-right: 20%;">-->
+          <input
+            type="number"
+            style="font-weight: bold;"
+            class="form-control text-center"
+            name="maxPpl"
+            [ngModel]="defaultMaxPpl"
+            aria-label="Recipient's username"
+            aria-describedby="basic-addon2"
+          >
+          <!--</div>-->
+          <div class="input-group-append" (click)="increaseMax()">
+            <div class="input-group-text">+</div>
+          </div>
+        </div>
+        <!--<div class="col-3">{{seller}}</div>-->
+      </div>
+    </form>
+
+
+    <div class="row border-bottom text-left">
+      <div class="col-6">I'll pay:</div>
+      <div class="col-6">${{userPaysIfMaxPpl}} - ${{userPaysIfMinPpl}}</div>
+    </div>
+  </div>
+
+  <br>
+
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="row align-items-center">
+        <div class="col-4">
+          <button type="button" (click)="sendMinMaxValues()" class="btn btn-primary" >Next</button>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="slotBooked === true" class="container">
+  <app-just-booked></app-just-booked>
+</div>
+

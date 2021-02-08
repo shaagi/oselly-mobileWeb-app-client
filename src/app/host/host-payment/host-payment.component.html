@@ -1,0 +1,55 @@
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-10 text-center">
+      <div>
+        <br>
+
+        <p class="thisTextIsNecessary">
+          We'll split the rental equally if at least {{numberOfOthersNeeded}} others give payment info 24 hours before the slot start time, otherwise, we won't charge anyone a dime.
+        </p>
+
+        <!--<br>-->
+
+        <!--<app-gym-name-and-pic></app-gym-name-and-pic>-->
+        <!--<h5>Number of people (total) playing in this game: 8-12</h5>-->
+        <!--<p class="thisTextIsNecessary">-->
+          <!--After you hit the button below, you'll get this slot for 24 hours. Within the 24 hours, if at least {{numberOfOthersNeeded}} others aren't interested your hold on this slot will expire-->
+        <!--</p>-->
+        <!--<br>-->
+        <!--<p>if you book, we'll email {{userEmail}} letting you know if you got enough people or not</p>-->
+      </div>
+    </div>
+
+    <div class="col-12 text-center">
+      <br>
+      <form id="payment-form">
+        <div class="form-row">
+          <label for="card-element">
+            Credit or debit card
+          </label>
+
+          <div id="card-element">
+            <!-- A Stripe Element will be inserted here. -->
+          </div>
+
+          <!-- Used to display Element errors. -->
+          <div id="card-errors" role="alert"></div>
+          <p class="errorThatWentThroughText" *ngIf="error">{{errorMessage}}</p>
+        </div>
+        <br>
+        <!--<div *ngIf="emptyOrInvalid">-->
+          <!--<p>form is either empty or invalid</p>-->
+        <!--</div>-->
+        <div *ngIf="loadingForPaymentSubmit">
+          <app-loading-spinner></app-loading-spinner>
+        </div>
+
+        <button class="btn btn-primary" (click)="submitPaymentForm()" [disabled]="loadingForPaymentSubmit">Complete Sign Up & Book This Slot</button>
+
+      </form>
+
+      <br>
+    </div>
+  </div>
+</div>
+<app-gym-name-and-pic></app-gym-name-and-pic>

@@ -1,0 +1,33 @@
+.yourInText {
+  font-size: 115%;
+  font-weight: bold;
+  text-align: left;
+  margin-bottom: 2%;
+}
+
+.persuasiveText {
+  text-align: left;
+  padding-right: 18%;
+  font-weight: bold;
+  font-size: 105%;
+  margin-bottom: 1%;
+  margin-top: 0%;
+  padding-top: 0%;
+}
+
+.btn-primary {
+  text-align: left;
+}
+
+.howManyMore {
+  padding-right: 18%;
+}
+
+.refuseToInvite {
+  /*margin-bottom: 1%;*/
+  color: grey;
+  padding-right: 18%;
+}
+
+
+

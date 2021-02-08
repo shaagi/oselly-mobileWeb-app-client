@@ -1,0 +1,22 @@
+<div *ngIf="!gameClosed">
+  <div class="col-12 text-left">
+    <p></p>
+
+    <p class="yourInText">YOU'RE NOW IN THE GAME</p>
+
+    <p class="persuasiveText">You ever hated someone for inviting you to play ball? Exactly. Help {{hostFirstName}}:</p>
+
+    <button class="btn btn-primary" (click)="toHowToInvitePage()">Invite friends</button>
+
+  </div>
+  <div class="col-12">
+    <br>
+    <p *ngIf="enoughPplIn === false" class="howManyMore">This game won't happen unless {{pplNeededToHitMin}} more join within {{hoursLeft}} hours.</p>
+    <p *ngIf="enoughPplIn === true" class="howManyMore">{{pplNeededToHitMax}} more can join within {{hoursLeft}} hours for the game to fill up:</p>
+
+    <p class="refuseToInvite">Can't think of anyone who wants to have fun while exercising? Check your <u (click)="toPendingGames()">pending games</u> to view this game's details before its cancellation status is determined</p>
+  </div>
+
+</div>
+
+<app-game-closed *ngIf="gameClosed"></app-game-closed>

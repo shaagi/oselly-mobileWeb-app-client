@@ -1,0 +1,13 @@
+/* You can add global styles to this file, and also import other style files */
+html, body {
+  font-family: 'Cabin';
+  /*font-size: larger;*/
+  padding: auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Cabin';
+  /*font-size: xx-large;*/
+  font-weight: bolder;
+}
+

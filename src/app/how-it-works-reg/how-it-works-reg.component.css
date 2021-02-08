@@ -1,0 +1,25 @@
+.steps {
+  text-align: left;
+}
+
+.stepText {
+  text-align: left;
+  font-size: 115%;
+  margin-right: 13%
+}
+
+.sectionHeading {
+  color: #f4991a;
+}
+
+.question {
+  text-align: left;
+  /*font-size: 110%;*/
+  margin-right: 20%;
+}
+
+.answer {
+  text-align: left;
+  font-size: 115%;
+  margin-right: 13%
+}

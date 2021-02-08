@@ -1,0 +1,8 @@
+/*body { font-family: 'Arial'; background: #ececec; }*/
+
+
+.container {
+  font-family: 'Arial'; background: #ececec;
+}
+ul { list-style-type: none; padding: 20px;}
+li { padding: 20px; background: white; margin-bottom: 5px; }

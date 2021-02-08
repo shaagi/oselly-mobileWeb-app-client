@@ -1,0 +1,10 @@
+<!--keep the below line as it'll guide ngStyle and making background image work as it took many tries-->
+<!--<div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image': 'url(assets/FletchersGym.JPG)'}">-->
+<div class="jumbotron jumbotron-fluid" [ngStyle]="{'background-image': getImage()}">
+  <div class="container">
+    <!--<br>-->
+    <h4 class="display-8">{{startTimeSeconds | secondsToDate}}, {{startTimeSeconds | secondsToTime}}-{{endTimeSeconds | secondsToTime}}</h4>
+    <p class="lead">{{gymName}}</p>
+    <p class="lead">{{gymAddress}}</p>
+  </div>
+</div>

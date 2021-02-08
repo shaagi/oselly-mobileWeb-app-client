@@ -1,0 +1,34 @@
+<div [ngClass]="{reduceContrast: guyWhoJustGotIn !== undefined}">
+
+  <div *ngIf="hostFlopped === false;" class="container text-left border-bottom">
+    <div *ngIf="guyWhoJustGotIn === undefined">
+      <strong>{{hostFireStore}}</strong> is in
+    </div>
+    <div *ngIf="guyWhoJustGotIn !== undefined">
+      {{hostFireStore}} is in
+    </div>
+  </div>
+
+  <div *ngFor="let semiHost of semiHosts; let i = index" class="container text-left border-bottom">
+    <div *ngIf="guyWhoJustGotIn === undefined">
+      <strong>{{semiHost}}</strong> is in (invited by {{hostFireStore}})
+    </div>
+    <div *ngIf="guyWhoJustGotIn !== undefined">
+      {{semiHost}} is in (invited by {{hostFireStore}})
+    </div>
+  </div>
+
+  <div *ngFor="let member of memberInvitees; let i = index" class="container text-left border-bottom">
+    <div *ngIf="guyWhoJustGotIn === undefined">
+      <strong>{{member}}</strong> is in (invited by {{semiHostInviters[i]}})
+    </div>
+    <div *ngIf="guyWhoJustGotIn !== undefined">
+      {{member}} is in (invited by {{semiHostInviters[i]}})
+    </div>
+  </div>
+
+  <div *ngFor="let spotBuyer of spotBuyers; let i = index" class="container text-left border-bottom">
+    <strong>{{spotBuyer}}</strong> is in (replaced {{spotSellers[i]}})
+  </div>
+
+</div>

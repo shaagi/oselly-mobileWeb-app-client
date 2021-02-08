@@ -1,0 +1,102 @@
+<div *ngIf="gameClosed === false;">
+
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-12 text-left">
+        <p></p>
+        <h5>
+          {{memberRefined}} has invited you to play basketball
+        </h5>
+        <p></p>
+      </div>
+    </div>
+  </div>
+
+  <app-gym-name-and-pic></app-gym-name-and-pic>
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center gameData">
+        <div class="row text-left font-weight-bold">
+          <div class="col-7">Decide within:</div>
+          <div class="col-5">
+            <app-booking-expiry-timer></app-booking-expiry-timer>
+          </div>
+        </div>
+        <div class="row text-left">
+          <div class="col-7">Minimum needed:</div>
+          <div class="col-5">{{minPplAllowed}} people</div>
+        </div>
+        <div class="row text-left">
+          <div class="col-7">Maximum allowed:</div>
+          <div class="col-5">{{maxPplAllowed}} people</div>
+        </div>
+        <div class="row text-left">
+          <div class="col-7">I'll pay:</div>
+          <div class="col-5">
+            <app-user-pays-range></app-user-pays-range>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <br>
+
+    <div *ngIf="userPaymentInfoLinked === false">
+      <a
+        routerLink="/memberMemberMarkMeInSignup"
+        [queryParams]="{member: member, game: gameId}"
+      >
+        <button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg" (click)="mixpanel('memberMemberFirstScreenImIn')">I'm in</button>
+      </a>
+      <!--<a routerLink="/cant">-->
+        <!--<button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg" (click)="mixpanel('memberMemberFirstScreenCant')">Can't</button>-->
+      <!--</a>-->
+    </div>
+    <div *ngIf="userPaymentInfoLinked === true && closeModal === false">
+      <!-- Button trigger modal -->
+      <button type="button" style="margin-right: 1%;" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter">
+        I'm in
+      </button>
+      <!--<a routerLink="/cant">-->
+        <!--<button type="button" style="margin-left: 1%;" class="btn btn-secondary btn-lg" (click)="mixpanel('memberMemberFirstScreenCant')">Can't</button>-->
+      <!--</a>-->
+      <!-- Modal -->
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Are you sure?</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              Your payment info is already linked with Oselly
+            </div>
+            <div class="modal-footer">
+              <a
+                routerLink="/memberMemberMarkMeInSignup"
+                [queryParams]="{member: member, game: gameId}"
+              >
+                <button type="button" style="margin-right: 1%;" class="btn btn-primary" (click)="imSure()">Yes</button>
+              </a>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <app-who-else-int></app-who-else-int>
+    <br>
+    <!--<button class="btn confused" (click)="directToHowItWorks()">Confused? Press this</button>-->
+    <!--<a routerLink="/flopHowItWorks">-->
+      <!--<p style="padding-top: 2%;">What if I need to flop?</p>-->
+    <!--</a>-->
+
+  </div>
+  <app-member-member-faq></app-member-member-faq>
+</div>
+
+<app-game-closed *ngIf="gameClosed === true;"></app-game-closed>

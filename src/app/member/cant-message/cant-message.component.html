@@ -1,0 +1,48 @@
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <h6>
+        Thanks for saying no instead of not doing anything. You did the right thing.
+      </h6>
+      <br>
+      <h5>
+        Interested in playing basketball with your friends?
+      </h5>
+      <br>
+      <h5>
+        Fill out the form so we can notify you when a gym or game spot opens up
+      </h5>
+
+
+    </div>
+  </div>
+
+  <br>
+
+</div>
+
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+
+      <div class="form-group col-md-auto">
+
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+          <input
+            type="text"
+            class="form-control"
+            name="contactInfo"
+            ngModel
+            placeholder="Phone Number"
+            aria-describedby="nameHelpBlock"
+          >
+          <br>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
+        <br>
+      </div>
+
+    </div>
+  </div>
+</div>

@@ -1,0 +1,131 @@
+<div *ngIf="replaceClosed === false;">
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <br>
+        <app-replace-info></app-replace-info>
+        <br>
+
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-12 text-center">
+        <form [ngStyle]="{display: getDisplay()}" id="payment-form">
+          <div class="form-row">
+            <label for="card-element">
+              Credit or debit card
+            </label>
+            <div id="card-element">
+              <!-- A Stripe Element will be inserted here. -->
+            </div>
+            <!-- Used to display Element errors. -->
+            <div id="card-errors" role="alert"></div>
+            <p class="errorThatWentThroughText" *ngIf="error">{{errorMessage}}</p>
+          </div>
+          <p *ngIf="loading">checking your payment info...please wait</p>
+          <button class="btn btn-primary" (click)="submitPaymentForm()">Sign Up</button>
+
+        </form>
+        <br>
+        <p *ngIf="replaceClosed === false;" class="paymentText"><app-brampton-signups></app-brampton-signups> other guys in Brampton have trusted Oselly with their payment info</p>
+      </div>
+    </div>
+  </div>
+<div *ngIf="replaceClosed === false;">
+  <app-gym-name-and-pic></app-gym-name-and-pic>
+
+  <div class="container text-center">
+    <div class="row justify-content-center">
+      <div class="col-10 text-center">
+
+        <app-who-else-paid></app-who-else-paid>
+
+        <p></p>
+
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="container">
+    <p>
+      <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+        <u>Frequently Asked Questions</u>
+      </a>
+    </p>
+    <div class="collapse" id="collapseExample">
+      <section class="accordion-section clearfix mt-3" aria-label="Question Accordions">
+        <div class="container">
+
+          <!--<h6>Frequently Asked Questions</h6>-->
+          <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+              <div class="panel-heading p-3 mb-3" role="tab" id="heading0">
+                <p class="panel-title">
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse0" aria-expanded="true" aria-controls="collapse0">
+                    Why do I have to give my debit/credit card to be in the game?
+                  </a>
+                </p>
+              </div>
+              <div id="collapse0" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading0">
+                <div class="panel-body px-3 mb-4">
+                  <p>
+                    So the rental can be split equally. This prevents the host from having to chase people for money,
+                    and prevents non-hosts from overpaying. Also, you won't have to pay more if someone else flops
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading p-3 mb-3" role="tab" id="heading2">
+                <p class="panel-title">
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="true" aria-controls="collapse2">
+                    What if I later learn that I can't make it?
+                  </a>
+                </p>
+              </div>
+              <div id="collapse2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2">
+                <div class="panel-body px-3 mb-4">
+                  <p>
+                    Unfortunately you'll still be charged so it's better to get in once you're sure
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="panel panel-default">
+              <div class="panel-heading p-3 mb-3" role="tab" id="heading3">
+                <p class="panel-title">
+                  <a class="collapsed" role="button" title="" data-toggle="collapse" data-parent="#accordion" href="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                    When do I pay?
+                  </a>
+                </p>
+              </div>
+              <div id="collapse3" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading3">
+                <div class="panel-body px-3 mb-4">
+                  <p>
+                    2 hours before the game starts.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </div>
+  <br>
+  <br>
+</div>
+
+
+
+<app-replace-closed *ngIf="replaceClosed === true"></app-replace-closed>

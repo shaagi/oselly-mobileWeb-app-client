@@ -1,0 +1,44 @@
+.btn {
+  white-space:normal;
+}
+
+.search-results {
+  height: 28rem;
+  overflow: scroll;
+  margin: 0 auto;
+}
+
+.selectedDate {
+  background-color: #F4991A;
+  border-radius: 29%;
+}
+
+.btn-selected {
+  background-color: #F4991A;
+  color: white;
+}
+
+.availableSlot {
+  margin-top: 5%;
+  text-align: left;
+}
+
+.container {
+  padding-right: 7%;
+  padding-left: 7%;
+}
+
+.arrowButton {
+  width: 100%;
+  font-size: 115%;
+  font-weight: bold;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+
+
+

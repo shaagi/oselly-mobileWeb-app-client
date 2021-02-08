@@ -1,0 +1,24 @@
+<form #numberOfPpl="ngForm">
+  <h5>If, in total,</h5>
+  <div class="form-group input-group mb-2 mr-sm-2" style="width: 60%; margin-left: 20%; margin-right: 20%;">
+    <div class="input-group-prepend" (click)="decreaseTotal()">
+      <div class="input-group-text">-</div>
+    </div>
+    <input
+      type="number"
+      style="font-weight: bold;"
+      class="form-control text-center"
+      name="totalPpl"
+      [ngModel]="defaultNoOfPpl"
+      aria-label="Recipient's username"
+      aria-describedby="basic-addon2"
+      (click)="numberChanged()"
+      (blur)="numberChanged()"
+    >
+    <div class="input-group-append" (click)="increaseTotal()">
+      <div class="input-group-text">+</div>
+    </div>
+  </div>
+</form>
+<h5>people play, I'll pay ${{userPays}}</h5>
+<small class="form-text text-muted">*no tax</small>

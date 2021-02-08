@@ -1,0 +1,25 @@
+
+<div *ngIf="loading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="!loading" class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <!--<small class="form-text text-muted">We need you to login so we can email you on steps to proceed if your game is happening</small>-->
+      <app-safari-private-mode></app-safari-private-mode>
+      <br>
+
+      <button class="loginBtn loginBtn--google" (click)="glogin()">
+        Login with Google
+      </button>
+
+      <p></p>
+
+      <button class="loginBtn loginBtn--facebook" (click)="fbLogin()">
+        Login with Facebook
+      </button>
+
+    </div>
+  </div>
+</div>

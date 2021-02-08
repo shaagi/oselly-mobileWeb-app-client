@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <br>
+      <p class="text-left">You'll get a hold on this slot till {{decisionDeadline | secondsToDate}} {{decisionDeadline | secondsToTime}}. If enough people get in by then we'll split the rental equally, otherwise, we won't charge anyone</p>
+      <button class="btn btn-primary" (click)="initiateBooking()">Initiate Booking</button>
+      <br>
+    </div>
+    <br>
+    <p></p>
+  </div>
+</div>
+
+<br>
+<div class="greyOut">
+  <app-gym-name-and-pic></app-gym-name-and-pic>
+</div>

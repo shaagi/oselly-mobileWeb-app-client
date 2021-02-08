@@ -1,0 +1,204 @@
+<!--PAUSE STARTS HERE-->
+<!--<div class="container text-center">-->
+  <!--<div class="row justify-content-center">-->
+    <!--<div class="col-8 text-center">-->
+
+<!--&lt;!&ndash;<p>If you only see one or two slots refresh the page</p>&ndash;&gt;-->
+      <!--<p style="background-color: orange"><strong>No slots right now as we're busy building the enterprise version of Oselly so that gyms can give you several slots instead of one or two. We'll be back soon</strong></p>-->
+
+    <!--</div>-->
+  <!--</div>-->
+<!--</div>-->
+<!--PAUSE ENDS HERE-->
+
+<!--PROD STARTS HERE-->
+<p></p>
+<div class="container">
+  <div class="row">
+    <div class="col-2">
+      <!--<div (click)="monthLeftArrow()" [ngClass]="{disableArrow: headedToPastMonth}"><strong><</strong></div>-->
+      <button (click)="monthLeftArrow()" [disabled]="headedToPastMonth" class="arrowButton"><</button>
+    </div>
+    <div class="col-8 text-center">
+      <p>
+        <!--<strong>April</strong>-->
+        <strong>{{selectedMonth}}</strong>
+      </p>
+    </div>
+    <div class="col-2">
+      <!--<div style="background-color: #1F9A11">></div>-->
+      <button (click)="monthRightArrow()" class="arrowButton">></button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+      <button (click)="dayLeftArrow()" [disabled]="headedToPastDay" class="arrowButton"> < </button>
+    </div>
+    <div class="col-2 text-center">
+      <p>
+        <strong>{{day1}}</strong>
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p>
+        <strong>{{day2}}</strong>
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p>
+        <strong>{{day3}}</strong>
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p>
+        <strong>{{day4}}</strong>
+      </p>
+    </div>
+
+    <div class="col-2">
+      <button (click)="dayRightArrow()" class="arrowButton"> > </button>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-2">
+
+    </div>
+    <div class="col-2 text-center">
+      <p [ngClass]="{selectedDate: dateSelected === date1}" (click)="selectDate(date1)">
+        {{date1}}
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p [ngClass]="{selectedDate: dateSelected === date2}" (click)="selectDate(date2)">
+        {{date2}}
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p [ngClass]="{selectedDate: dateSelected === date3}" (click)="selectDate(date3)">
+        {{date3}}
+      </p>
+    </div>
+    <div class="col-2 text-center">
+      <p [ngClass]="{selectedDate: dateSelected === date4}" (click)="selectDate(date4)">
+        {{date4}}
+      </p>
+    </div>
+
+    <div class="col-2">
+
+
+    </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row no-gutters">
+    <div class="col text-center">
+      <button class="btn" [ngClass]="{'btn-selected': selectedDuration === 1, 'btn-secondary': selectedDuration !== 1}" (click)="selectDuration(1)">1 hour</button>
+    </div>
+    <div class="col text-center">
+      <button class="btn" [ngClass]="{'btn-selected': selectedDuration === 1.5, 'btn-secondary': selectedDuration !== 1.5}" (click)="selectDuration(1.5)">1.5 hour</button>
+    </div>
+    <div class="col text-center">
+      <button class="btn" [ngClass]="{'btn-selected': selectedDuration === 2, 'btn-secondary': selectedDuration !== 2}" (click)="selectDuration(2)">2 hours</button>
+    </div>
+  </div>
+</div>
+
+
+<div class="container">
+  <div class="col-1">
+
+  </div>
+
+  <div class="col-10">
+
+    <div *ngFor="let slot of displaySlotsFormatted; let i = index" class="row">
+
+      <button type="button" class="btn btn-primary availableSlot" (click)="slotClick(slot)">
+        {{slot.startTime}}-{{slot.endTime}}
+        <!--{{slot.startTime}}-{{slot.endTime}} {{slot.gymName}}-->
+      </button>
+    </div>
+
+  </div>
+
+  <div class="col-1">
+
+  </div>
+
+</div>
+
+<div *ngIf="cannotDisplayPastError" class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-8 text-center">
+      <br>
+      <p>Cannot display slots from tomorrow or before</p>
+      <!--before current date-->
+    </div>
+  </div>
+</div>
+<!--PROD ENDS HERE-->
+
+<!--the below block is trying out a more google calendar-ish version of displaying available times-->
+<!--<div class="container">-->
+<!--<table id="customers">-->
+<!--<tr>-->
+<!--&lt;!&ndash;<th>Company</th>&ndash;&gt;-->
+<!--&lt;!&ndash;<th>Contact</th>&ndash;&gt;-->
+<!--&lt;!&ndash;<th>Country</th>&ndash;&gt;-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Alfreds Futterkiste</td>&ndash;&gt;-->
+<!--<td>10:00AM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Berglunds snabbköp</td>&ndash;&gt;-->
+<!--<td>10:30AM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Centro comercial Moctezuma</td>&ndash;&gt;-->
+<!--<td>11:00AM</td>-->
+<!--<td style="background-color: #BB3F30"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Ernst Handel</td>&ndash;&gt;-->
+<!--<td>11:30AM</td>-->
+<!--<td [ngClass]="{'btn-selected': selectedDuration === 1.5, 'btn-secondary': selectedDuration !== 1.5}" (click)="selectDuration(1.5)"></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Island Trading</td>&ndash;&gt;-->
+<!--<td>12:00PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Königlich Essen</td>&ndash;&gt;-->
+<!--<td>12:30PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Laughing Bacchus Winecellars</td>&ndash;&gt;-->
+<!--<td>1:00PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Magazzini Alimentari Riuniti</td>&ndash;&gt;-->
+<!--<td>1:30PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>North/South</td>&ndash;&gt;-->
+<!--<td>2:00PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--<tr>-->
+<!--&lt;!&ndash;<td>Paris spécialités</td>&ndash;&gt;-->
+<!--<td>2:30PM</td>-->
+<!--<td></td>-->
+<!--</tr>-->
+<!--</table>-->
+<!--</div>-->
+

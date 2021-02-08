@@ -1,0 +1,9 @@
+<ng-template [ngIf]="!authService.isAuthenticated()">
+  <app-isnt-auth-header></app-isnt-auth-header>
+</ng-template>
+
+<app-is-auth-header *ngIf="authService.isAuthenticated() && isGym === false"></app-is-auth-header>
+
+<app-gym-header *ngIf="isGym"></app-gym-header>
+
+<router-outlet></router-outlet>

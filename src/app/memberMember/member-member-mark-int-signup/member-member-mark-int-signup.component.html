@@ -1,0 +1,32 @@
+<div *ngIf="loading">
+  <app-loading-spinner></app-loading-spinner>
+</div>
+
+<div *ngIf="!loading" class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-9 text-left">
+      <app-safari-private-mode></app-safari-private-mode>
+
+      <p></p>
+      <p>You must login to get in the game</p>
+
+
+      <button class="loginBtn loginBtn--google" (click)="glogin()">
+        Login with Google
+      </button>
+
+      <p></p>
+
+      <button class="loginBtn loginBtn--facebook" (click)="fbLogin()">
+        Login with Facebook
+      </button>
+      <!--<p>We do this because we need a way of notifying you if this game is happening</p>-->
+      <br>
+      <br>
+      <p><app-brampton-signups></app-brampton-signups> guys in the Brampton area have signed up  to Oselly</p>
+      <br>
+      <!--<p>You must decide in <strong>{{hoursLeft}}:{{minutesLeftRefined}}:{{secondsLeftRefined}}</strong></p>-->
+
+    </div>
+  </div>
+</div>

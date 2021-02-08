@@ -1,0 +1,23 @@
+<div class="container text-center">
+  <div class="row justify-content-center">
+    <div class="col-12 text-center">
+      <p *ngIf="justCancelledGame" class="justCancelledGameText">Your game will be cancelled and be removed from here within seconds</p>
+      <br>
+      <h5>
+        Your pending games:
+      </h5>
+
+      <div *ngFor="let game of pendingGames; let i = index">
+        <br>
+        <button type="button" class="btn btn-primary"
+                routerLink="/pendingGameInfo" [queryParams]="{game: game.gameId}"
+                (click)="mixpanel('selectPendingGames')"
+        >
+
+          <p>{{game.startTimeSeconds | secondsToDate}}, {{game.startTimeSeconds | secondsToTime}}-{{game.endTimeSeconds | secondsToTime}}</p>
+
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
